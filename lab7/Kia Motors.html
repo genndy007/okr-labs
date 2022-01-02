@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Kia Motors</title>
+</head>
+
+<body
+    background="https://drasler.ru/wp-content/uploads/2019/05/%D0%A4%D0%BE%D0%BD-%D1%81%D0%B2%D0%B5%D1%82%D0%BB%D1%8B%D0%B9-%D0%BE%D0%B4%D0%BD%D0%BE%D1%82%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9-%D0%B4%D0%BB%D1%8F-%D1%84%D0%BE%D1%82%D0%BE%D1%88%D0%BE%D0%BF%D0%B0-023.jpg">
+    <h1 style="text-align: center;">Kia Motors</h1>
+    <p><img src="kia_sportage_trainin.webp" alt="kia_sportage_trainin" width="500px"></p>
+    <p style="margin-left: 50px; margin-right: 50px;">Kia Corporation — южнокорейская автомобилестроительная компания,
+        второй автопроизводитель в Республике Корея и седьмой в мире, основана в декабре 1944 года. Входит в группу
+        компаний Hyundai Motor Group. В 2016 году в мире было продано 3 007 976 автомобилей. Официальный слоган компании
+        — «Movement that inspires» («Движение, которое вдохновляет»). Название Kia расшифровывается как «Выйти из Азии в
+        весь мир» («Войти в мир из Азии»).</p>
+    <hr>
+    <p style="text-align: center;"><a class="link" href="https://ru.wikipedia.org/wiki/Kia_Motors">Kia_Motors</a></p>
+
+    <hr>
+    <strong>
+        <p class="to_main_page"><a class="link" href="index.html">На головну</a></p>
+    </strong>
+
+    
+    <script src="./scripts/task1.js"></script>
+    <p>Lab 7 Task 1</p>
+    <!-- Action with attribute onclick -->
+    <input value="Press alert" onclick="alert('Pressed by attribute')" type="button">
+    <input id='some_button' value="Press alert" type="button">
+    <input id='el_button' value="Press alert" type="button">
+    <input id='he_button' value="Press alert" type="button">
+    <script>
+        // set action by property
+        some_button.onclick = () => alert('Pressed by id')
+        // set actions with event listener
+        el_button.addEventListener('click', () => alert('Pressed by event listener'))
+        el_button.addEventListener('click', () => el_button.value += '1')
+
+        // handle event class
+        class PressDetector {
+            handleEvent(event) {
+                he_button.value += ' pressed'
+                alert(`Event ${event.type}\nTarget ${event.currentTarget}`)
+            }
+        }
+
+        // add action with object
+        const pressDetector = new PressDetector()
+        he_button.addEventListener('click', pressDetector)
+        // remove action with object
+        setInterval(() => he_button.removeEventListener('click', pressDetector), 5000)
+
+    </script>
+
+
+    <script src="./scripts/task2.js"></script>
+    <p>Lab 7 Task 2</p>
+    <input type="button" value="No mouse over me" data-touch>
+    <ul id='list'>
+        <li data-action="highlightRed">Paint Red</li>
+        <br>
+        <li data-action="highlightYellow">Paint Yellow</li>
+        <br>
+        <li data-action="highlightGreen">Paint Green</li>
+        <br>
+        <li data-action="highlightBlue">Paint Blue</li>
+    </ul>
+    <script>
+        // Створити списк або використати існуючий.
+        //  Реалізувати підсвічування елементів списку при кліку миші.
+        //   Використовавати event.target. Обробник onclick застоcувати для списку,
+        //   а не для кожного елементу. Створити меню (кілька кнопок),
+        //   додати одни обробник для всього меню і атрибути data-* для кожної кнопки,
+        //    в відповідності з методами, які вони викликають.
+        class Highlighting {
+            constructor(elem) {
+                this._elem = elem
+                elem.onclick = this.onClick.bind(this)
+            }
+            highlightRed() {
+                this._elem.style.color = 'red'
+            }
+            highlightYellow() {
+                this._elem.style.color = 'yellow'
+            }
+            highlightGreen() {
+                this._elem.style.color = 'green'
+            }
+            highlightBlue() {
+                this._elem.style.color = 'blue'
+            }
+            onClick(event) {
+                const action = event.target.dataset.action
+                if (action) {
+                    this[action]()
+                }
+            }
+        }
+
+        new Highlighting(list)
+
+        // Застосувати прийом
+        //    проектування «Поведінка»
+        // (додавання елементам поведінки behavior за допомогою атрибута data-*.
+        document.addEventListener('mouseover', (event) => {
+            if (event.target.dataset.touch != undefined) event.target.value = 'Mouse over me!'
+        })
+        document.addEventListener('mouseout', (event) => {
+            if (event.target.dataset.touch != undefined) event.target.value = 'No mouse over me'
+        })
+
+
+    </script>
+
+</body>
+
+</html>

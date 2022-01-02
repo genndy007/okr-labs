@@ -1,0 +1,155 @@
+body {
+  background-color: rgb(207, 180, 144);
+}
+
+h1 {
+  font-size: 24px;
+  font-style: italic bold;
+  line-height: 120%;
+}
+
+.spisok {
+  margin-left: 15px !important;
+  font-size: 20px;
+}
+
+.spisok li {
+  list-style-type: square;
+  margin: auto;
+}
+
+.table td img {
+  width: 500px;
+  margin-left: 40px;
+}
+
+.table td {
+  margin: 10px 15px 10px 15px;
+}
+
+.list {
+  text-align: center;
+  color: blueviolet;
+}
+
+.list h2 {
+  color: black !important;
+}
+
+/* .list-style a{
+    text-align: center ;
+    color: indigo;
+    font-size: 20px;
+} */
+
+.about {
+  text-align: center;
+  font-size: 25px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.tablica {
+  margin: auto;
+  width: 1500px;
+  color: rgb(20, 4, 4);
+}
+
+.tablica th {
+  background-color: rgb(86, 102, 153);
+  color: antiquewhite;
+  font-size: 20px;
+  border: double;
+  width: 500px;
+  height: 30px;
+}
+
+.tablica td {
+  width: 500px;
+  border: double;
+  text-align: center;
+  font-size: 30px;
+  background-color: antiquewhite;
+}
+
+.tablica td img {
+  width: 500px;
+}
+
+.abouttwo {
+  text-align: center;
+  font-size: 25px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.info {
+  margin: auto;
+  width: 900px;
+  background-color: burlywood;
+}
+
+.info th {
+  font-size: 20px;
+  border: double;
+  width: 300px;
+  height: 100px;
+}
+
+.info td {
+  text-align: center;
+  font-size: 20px;
+  border: double;
+  width: 300px;
+  height: 80px;
+}
+
+.button {
+  color: darkcyan;
+  background-color: ghostwhite;
+  padding: 10px 5px;
+  border-radius: 25%;
+}
+
+@media (max-width: 500px) {
+  body {
+    text-align: center;
+    display: block;
+  }
+}
+
+/* lab 4 */
+
+/* index.html */
+.automobile i + b {
+  background-color: chartreuse;
+}
+
+.list a {
+  background-color: cyan;
+}
+
+body > h1 {
+  text-align: center;
+}
+
+/* Kia motors html */
+
+body > strong {
+  text-align: center;
+}
+
+body p a {
+  font-size: 24px;
+  font-family: "Courier New", Courier, monospace;
+  background-color: aqua;
+}
+
+h1 + p {
+  text-align: center;
+}
+
+.to_main_page > a {
+  outline: brown;
+  opacity: 0.5;
+}
